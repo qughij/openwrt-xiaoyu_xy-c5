@@ -32,11 +32,12 @@ jobs:
         uses: actions/checkout@master
         with:
           repository: coolsnowwolf/lede
+          path: lede
 
       - name: Checkout config
         uses: actions/checkout@master
         with:
-          path: c5-confg        
+          path: c5-config
 
       - name: Space cleanup
         env:
@@ -63,11 +64,13 @@ jobs:
 
       - name: Update feeds
         run: |
+          pwd
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
       - name: Generate configuration file
         run: |
+          pwd
           rm -f ./.config*    
           mv $CONFIG_FILE ./.config
           make defconfig
