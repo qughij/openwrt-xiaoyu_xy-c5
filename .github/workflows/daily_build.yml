@@ -18,11 +18,6 @@ on:
   # release:
   #   types: [published]
 
-env:
-  CONFIG_FILE: ./c5-config/config.seed
-  TZ: Asia/Shanghai
-
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,7 +27,6 @@ jobs:
         uses: actions/checkout@master
         with:
           repository: coolsnowwolf/lede
-          path: lede
 
       - name: Checkout config
         uses: actions/checkout@master
@@ -72,7 +66,7 @@ jobs:
         run: |
           pwd
           rm -f ./.config*    
-          mv $CONFIG_FILE ./.config
+          mv ./c5-config/config.seed ./.config
           make defconfig
                      
       - name: Make download
