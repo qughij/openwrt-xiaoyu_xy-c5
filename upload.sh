@@ -1,7 +1,9 @@
 #!/bin/bash
 
-AUTH=$2
-DIR=$1
+
+dir=$1
+auth=$2
+version=$3
 
 function get_files(){
     for i in `ls $1`
@@ -15,7 +17,7 @@ function get_files(){
     done
 }
  
-for i in `get_files $1`
+for i in `get_files $dir`
   do
-    curl 
-  
+    curl -T ${i} -u ${auth} "${uplaod_url}${i}?version=${version}"
+done
