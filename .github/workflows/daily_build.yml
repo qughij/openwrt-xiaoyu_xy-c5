@@ -103,4 +103,6 @@ jobs:
           path: ./bin/packages/
 
       - name: Upload to pkg.coding.net
-        run: ./upload.sh ./bin ${{ secrets.UPLOAD_AUTH }} ${{ secrets.UPLOAD_URL }} `date '+%Y.%m.%d'`
+        run: |
+          chmod +x ./upload.sh
+          ./upload.sh ./bin ${{ secrets.UPLOAD_AUTH }} ${{ secrets.UPLOAD_URL }} `date '+%Y.%m.%d'`
