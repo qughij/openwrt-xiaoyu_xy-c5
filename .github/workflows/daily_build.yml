@@ -68,6 +68,7 @@ jobs:
           rm -f ./.config*    
           mv ./config.seed ./.config
           make defconfig
+          ls
                      
       - name: Make download
         run: |
@@ -89,30 +90,14 @@ jobs:
       - name: Prepare artifact
         run: find ./bin/targets/ -type d -name "packages" | xargs rm -rf {}
 
-      - name: Upload artifact
+      - name: Upload artifact targets
         uses: actions/upload-artifact@master
         with:
           name: OpenWrt firmware
           path: ./bin/targets/
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-      
-      - name: Upload Release Asset
-        id: upload-release-asset 
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ./my-artifact.zip
-          asset_name: my-artifact.zip
-          asset_content_type: application/zip
+      - name: Upload artifact packages
+        uses: actions/upload-artifact@master        
+        with:           
+          name: OpenWrt firmware           
+          path: ./bin/packages/
