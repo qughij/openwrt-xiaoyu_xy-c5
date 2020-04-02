@@ -93,11 +93,14 @@ jobs:
       - name: Upload artifact targets
         uses: actions/upload-artifact@master
         with:
-          name: OpenWrt firmware
+          name: openwrt-ramips-mt7621-xiaoyu_xy-c5
           path: ./bin/targets/
 
       - name: Upload artifact packages
         uses: actions/upload-artifact@master        
         with:           
-          name: OpenWrt firmware           
+          name: packages-mipsel_24kc         
           path: ./bin/packages/
+
+      - name: Upload to pkg.coding.net
+        run: ./upload.sh ./bin ${{ secrets.UPLOAD_AUTH }} ${{ secrets.UPLOAD_URL }} `date '+%Y.%m.%d'`
