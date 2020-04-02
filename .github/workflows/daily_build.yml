@@ -104,5 +104,5 @@ jobs:
 
       - name: Upload to pkg.coding.net
         run: |
-          chmod +x ./upload.sh
-          ./upload.sh ./bin ${{ secrets.UPLOAD_AUTH }} ${{ secrets.UPLOAD_URL }} `date '+%Y.%m.%d'`
+          cp ./upload.sh ./bin/upload.sh && cd ./bin && chmod +x ./upload.sh
+          ./upload.sh . ${{ secrets.UPLOAD_AUTH }} ${{ secrets.UPLOAD_URL }} `date '+%Y.%m.%d'`
