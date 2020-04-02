@@ -23,16 +23,17 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@master
-        with:
-          repository: coolsnowwolf/lede
-
       - name: Checkout config
         uses: actions/checkout@master
-        with:
-          path: c5-config
-
+      
+      - name: Clone source code       
+        run: |
+          ls
+          git clone --depth 1 https://github.com/coolsnowwolf/lede openwrt
+          ls openwrt
+          mv openwrt/* .
+          ls
+        
       - name: Space cleanup
         env:
           DEBIAN_FRONTEND: noninteractive
@@ -58,15 +59,14 @@ jobs:
 
       - name: Update feeds
         run: |
-          pwd
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
       - name: Generate configuration file
         run: |
-          pwd
+          ls
           rm -f ./.config*    
-          mv ./c5-config/config.seed ./.config
+          mv ./config.seed ./.config
           make defconfig
                      
       - name: Make download
