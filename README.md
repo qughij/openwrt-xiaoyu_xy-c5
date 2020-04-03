@@ -1,6 +1,7 @@
 # openwrt-xiaoyu-xy-c5
 
 ## 默认设置在/openwrt/include目录下面的target.mk中
+参考知乎文章[编译openwrt时取消预选的软件包](https://zhuanlan.zhihu.com/p/70656867)
 
  ```
 # Default packages - the really basic set
