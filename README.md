@@ -1,8 +1,8 @@
 # openwrt-xiaoyu-xy-c5
 
- ```
-##默认设置在/openwrt/include目录下面的target.mk中
+## 默认设置在/openwrt/include目录下面的target.mk中
 
+ ```
 # Default packages - the really basic set
 DEFAULT_PACKAGES:=base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd urandom-seed urngd \
 block-mount coremark kmod-nf-nathelper kmod-nf-nathelper-extra kmod-ipt-raw wget libustream-openssl ca-certificates \
