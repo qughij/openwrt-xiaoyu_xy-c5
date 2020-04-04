@@ -104,13 +104,13 @@ jobs:
 
           # 2取消部分平台默认插件
           cat >> .config <<EOF
-          CONFIG_DEFAULT_luci-app-accesscontrol=y
+          # CONFIG_PACKAGE_luci-app-accesscontrol is not set
           CONFIG_DEFAULT_luci-app-adbyby-plus=y
           CONFIG_DEFAULT_luci-app-arpbind=y
           CONFIG_DEFAULT_luci-app-autoreboot=y
           CONFIG_DEFAULT_luci-app-cpufreq=y
           CONFIG_DEFAULT_luci-app-ddns=y
-          CONFIG_DEFAULT_luci-app-filetransfer=y
+          # CONFIG_PACKAGE_luci-app-filetransfer is not set
           CONFIG_DEFAULT_luci-app-flowoffload=y
           CONFIG_DEFAULT_luci-app-nlbwmon=y
           CONFIG_DEFAULT_luci-app-ramfree=y
@@ -118,37 +118,37 @@ jobs:
           CONFIG_DEFAULT_luci-app-ssr-plus=m
           CONFIG_DEFAULT_luci-app-unblockmusic=m
           CONFIG_DEFAULT_luci-app-upnp=y
-          CONFIG_DEFAULT_luci-app-vlmcsd=y
-          CONFIG_DEFAULT_luci-app-vsftpd=y
+          # CONFIG_PACKAGE_luci-app-vlmcsd is not set
+          # CONFIG_PACKAGE_luci-app-vsftpd is not set
           CONFIG_DEFAULT_luci-app-wol=y
           EOF
           
           # 3设置固件内插件
           cat >> .config <<EOF
+          CONFIG_PACKAGE_luci-app-frpc=y
+          CONFIG_PACKAGE_luci-app-frps=y
+          CONFIG_PACKAGE_luci-app-openvpn=y
+          CONFIG_PACKAGE_luci-app-openvpn-server=y
           CONFIG_PACKAGE_luci-app-minidlna=y
-          CONFIG_PACKAGE_luci-app-statistics=y
-          CONFIG_PACKAGE_luci-app-sqm=y
-          CONFIG_PACKAGE_luci-app-ttyd=y
           CONFIG_PACKAGE_luci-app-wrtbwmon=y
+          CONFIG_PACKAGE_luci-app-webadmin=y
           CONFIG_PACKAGE_luci-app-zerotier=y
           EOF
           
           
           # 4设置手动安装插件
-          cat >> .config <<EOF
-          CONFIG_PACKAGE_luci-app-aria2=m
-          CONFIG_PACKAGE_luci-app-baidupcs-web=m
-          CONFIG_PACKAGE_luci-app-frpc=m
-          CONFIG_PACKAGE_luci-app-hd-idle=m
-          CONFIG_PACKAGE_luci-app-kodexplorer=m
-          CONFIG_PACKAGE_luci-app-openvpn=m
-          CONFIG_PACKAGE_luci-app-openvpn-server=m
-          CONFIG_PACKAGE_luci-app-qbittorrent=m
-          CONFIG_PACKAGE_luci-app-v2ray-server=m
-          CONFIG_PACKAGE_luci-app-verysync=m
-          CONFIG_PACKAGE_luci-app-webadmin=m
-          CONFIG_PACKAGE_luci-app-wireguard=m
-          EOF
+          # cat >> .config <<EOF
+          # CONFIG_PACKAGE_luci-app-aria2=m
+          # CONFIG_PACKAGE_luci-app-baidupcs-web=m
+          # CONFIG_PACKAGE_luci-app-kodexplorer=m
+          # CONFIG_PACKAGE_luci-app-qbittorrent=m
+          # CONFIG_PACKAGE_luci-app-statistics=m
+          # CONFIG_PACKAGE_luci-app-sqm=m
+          # CONFIG_PACKAGE_luci-app-ttyd=m
+          # CONFIG_PACKAGE_luci-app-v2ray-server=m
+          # CONFIG_PACKAGE_luci-app-verysync=m          
+          # CONFIG_PACKAGE_luci-app-wireguard=m
+          # EOF
 
           # 5添加功能支持
           # LuCI主题:
