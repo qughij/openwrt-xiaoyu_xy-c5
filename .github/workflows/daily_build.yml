@@ -125,11 +125,8 @@ jobs:
           
           # 3设置固件内插件
           cat >> .config <<EOF
-          CONFIG_PACKAGE_luci-app-frpc=y
-          CONFIG_PACKAGE_luci-app-frps=y
           CONFIG_PACKAGE_luci-app-openvpn=y
           CONFIG_PACKAGE_luci-app-openvpn-server=y          
-          CONFIG_PACKAGE_luci-app-wrtbwmon=y          
           CONFIG_PACKAGE_luci-app-zerotier=y
           EOF
           
@@ -138,6 +135,8 @@ jobs:
           # cat >> .config <<EOF
           # CONFIG_PACKAGE_luci-app-aria2=m
           # CONFIG_PACKAGE_luci-app-baidupcs-web=m
+          # CONFIG_PACKAGE_luci-app-frpc=m
+          # CONFIG_PACKAGE_luci-app-frps=m
           # CONFIG_PACKAGE_luci-app-kodexplorer=m
           # CONFIG_PACKAGE_luci-app-minidlna=m
           # CONFIG_PACKAGE_luci-app-qbittorrent=m
@@ -148,14 +147,16 @@ jobs:
           # CONFIG_PACKAGE_luci-app-verysync=m
           # CONFIG_PACKAGE_luci-app-webadmin=m      
           # CONFIG_PACKAGE_luci-app-wireguard=m
+          # CONFIG_PACKAGE_luci-app-wrtbwmon=m        
           # EOF
 
           # 5添加功能支持
           # LuCI主题:
-          cat >> .config <<EOF
+          # cat >> .config <<EOF
           # CONFIG_PACKAGE_luci-theme-bootstrap is not set
-          CONFIG_PACKAGE_luci-theme-argon=y
-          EOF
+          # CONFIG_PACKAGE_luci-theme-argon=y
+          # EOF
+          
           # IPv6支持:
           cat >> .config <<EOF
           CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
