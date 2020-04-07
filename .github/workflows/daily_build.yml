@@ -10,9 +10,9 @@
 name: Dialy Build
 
 on:
-  push:
-    branches: 
-      - master
+  # push:
+  #  branches: 
+  #    - master
   schedule:
       - cron: 0 22 * * 1
   # release:
