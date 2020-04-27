@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 # 
 
-name: Dialy Build
+name: Weekly-Build
 
 on:
   # push:
