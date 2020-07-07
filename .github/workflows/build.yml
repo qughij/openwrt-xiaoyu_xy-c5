@@ -115,8 +115,8 @@ jobs:
           CONFIG_DEFAULT_luci-app-nlbwmon=y
           CONFIG_DEFAULT_luci-app-ramfree=y
           CONFIG_DEFAULT_luci-app-sfe=y
-          CONFIG_DEFAULT_luci-app-ssr-plus=m
-          CONFIG_DEFAULT_luci-app-unblockmusic=m
+          CONFIG_DEFAULT_luci-app-ssr-plus=y
+          CONFIG_DEFAULT_luci-app-unblockmusic=y
           CONFIG_DEFAULT_luci-app-upnp=y
           # CONFIG_PACKAGE_luci-app-vlmcsd is not set
           # CONFIG_PACKAGE_luci-app-vsftpd is not set
