@@ -103,25 +103,9 @@ jobs:
           
 
           # 2取消部分平台默认插件
-          cat >> .config <<EOF
+          # cat >> .config <<EOF
           # CONFIG_PACKAGE_luci-app-accesscontrol is not set
-          CONFIG_DEFAULT_luci-app-adbyby-plus=y
-          CONFIG_DEFAULT_luci-app-arpbind=y
-          CONFIG_DEFAULT_luci-app-autoreboot=y
-          CONFIG_DEFAULT_luci-app-cpufreq=y
-          CONFIG_DEFAULT_luci-app-ddns=y
-          # CONFIG_PACKAGE_luci-app-filetransfer is not set
-          CONFIG_DEFAULT_luci-app-flowoffload=y
-          CONFIG_DEFAULT_luci-app-nlbwmon=y
-          CONFIG_DEFAULT_luci-app-ramfree=y
-          CONFIG_DEFAULT_luci-app-sfe=y
-          CONFIG_DEFAULT_luci-app-ssr-plus=y
-          CONFIG_DEFAULT_luci-app-unblockmusic=y
-          CONFIG_DEFAULT_luci-app-upnp=y
-          # CONFIG_PACKAGE_luci-app-vlmcsd is not set
-          # CONFIG_PACKAGE_luci-app-vsftpd is not set
-          CONFIG_DEFAULT_luci-app-wol=y
-          EOF
+          # EOF
           
           # 3设置固件内插件
           cat >> .config <<EOF
