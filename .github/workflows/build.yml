@@ -175,24 +175,32 @@ jobs:
           du -h --max-depth=1 ./ --exclude=build_dir --exclude=bin
           du -h --max-depth=1 ./build_dir
           du -h --max-depth=1 ./bin
-        
+
+
       - name: Prepare artifact
-        run: find ./bin/targets/ -type d -name "packages" | xargs rm -rf {}
+        run: |
+          mkdir -p ./artifact/firmware
+          mkdir -p ./artifact/package
+          mkdir -p ./artifact/buildinfo
+          rm -rf $(find ./bin/targets/ -type d -name "packages")
+          cp -rf $(find ./bin/targets/ -type f) ./artifact/firmware/
+          cp -rf $(find ./bin/packages/ -type f -name "*.ipk") ./artifact/package/
+          cp -rf $(find ./bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./artifact/buildinfo/
 
-      - name: Upload artifact targets
-        uses: actions/upload-artifact@master
+      - name: Deliver buildinfo
+        uses: actions/upload-artifact@v2
         with:
-          name: targets-ramips-mt7621
+          name: OpenWrt_buildinfo
+          path: ./artifact/buildinfo/
+
+      - name: Deliver package
+        uses: actions/upload-artifact@v2
+        with:
+          name: OpenWrt_package
+          path: ./artifact/package/
+
+      - name: Deliver firmware
+        uses: actions/upload-artifact@v2
+        with:
+          name: OpenWrt_firmware
           path: ./bin/targets/
-
-      - name: Upload artifact packages
-        uses: actions/upload-artifact@master        
-        with:
-          name: packages-mipsel_24kc         
-          path: ./bin/packages/
-
-      - name: Upload artifact xy-c5
-        uses: actions/upload-artifact@master        
-        with:
-          name: openwrt-ramips-mt7621-xiaoyu_xy-c5-squashfs-sysupgrade         
-          path: ./bin/targets/ramips/mt7621/openwrt-ramips-mt7621-xiaoyu_xy-c5-squashfs-sysupgrade.bin
