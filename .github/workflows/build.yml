@@ -124,11 +124,16 @@ jobs:
           CONFIG_PACKAGE_luci-mod-rpc=y
           EOF
         
-          # >固件主题:
+          # >固件主题
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
           EOF
-                    
+
+          # >京东签到
+          cat >> .config <<EOF
+          CONFIG_PACKAGE_luci-app-jd-dailybonus=y
+          EOF
+   
           # 设置手动安装插件
           # cat >> .config <<EOF
           # CONFIG_PACKAGE_luci-app-aria2=m
