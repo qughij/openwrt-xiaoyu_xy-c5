@@ -1,6 +1,6 @@
 # 自用小娱C5路由器openwrt固件
 
-**说明：** 采用GitHub actions自动编译，每周一拉取[Lean大的源码仓库](https://github.com/coolsnowwolf/lede)更新。编译配置中取消了部分默认预选插件，添加了部分插件包括ipv6支持需要的插件。配置详见[这里](https://github.com/qughij/openwrt-xiaoyu_xy-c5/blob/master/.github/workflows/daily_build.yml)
+**说明：** 采用GitHub actions自动编译，每周一拉取[Lean大的源码仓库](https://github.com/coolsnowwolf/lede)更新。编译配置中取消了部分默认预选插件，添加了部分插件包括ipv6支持需要的插件。配置详见[这里](https://github.com/qughij/openwrt-xiaoyu_xy-c5/blob/master/.github/workflows/build.yml)
 
 
 ## 关于固件的主题选择
