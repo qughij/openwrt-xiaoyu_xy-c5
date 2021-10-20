@@ -10,10 +10,10 @@
 * b
 ## 主题
 * bootstrap
-* Argon
+* [Argon](https://github.com/jerrykuku/luci-theme-argon)
 ## 插件
-* luci-app-zerotier
-* luci-app-jd-dailybonus
+* [luci-app-zerotier](https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-zerotier)
+* [luci-app-jd-dailybonus](https://github.com/jerrykuku/luci-app-jd-dailybonus)
 ## 拓展功能
 * IpV6支持
 * RPC支持
